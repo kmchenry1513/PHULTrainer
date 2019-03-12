@@ -22,7 +22,6 @@ class WorkoutActivity : AppCompatActivity() {
     var dayExerciseList:ArrayList<String> = ArrayList()
     var day:Int = 0
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,7 +31,6 @@ class WorkoutActivity : AppCompatActivity() {
         editor.clear()
         editor.commit()
 
-        exerciseList = initExerciseObjs()
         day = intent.getIntExtra("dayNumber", 0)
 
         when(day){
@@ -114,40 +112,5 @@ class WorkoutActivity : AppCompatActivity() {
             }
         }
     }
-
-    private fun initExerciseObjs():ArrayList<Exercise> {
-
-        exerciseList.add((Exercise("1", "Barbell Bench Press", "4x5")))
-        exerciseList.add((Exercise("1", "Incline Dumbbell Bench Press", "4x10")))
-        exerciseList.add((Exercise("1", "Bent Over Row", "4x5")))
-        exerciseList.add((Exercise("1", "Lat Pull Down", "4x10")))
-        exerciseList.add((Exercise("1", "Overhead Press", "3x8")))
-        exerciseList.add((Exercise("1", "Barbell Curl", "3x10")))
-        exerciseList.add((Exercise("1", "Skullcrushers", "3x10")))
-
-        exerciseList.add((Exercise("2", "Squat", "4x5")))
-        exerciseList.add((Exercise("2", "Deadlift", "4x5")))
-        exerciseList.add((Exercise("2", "Leg Press", "5x15")))
-        exerciseList.add((Exercise("2", "Leg Curl", "4x10")))
-        exerciseList.add((Exercise("2", "Calf Exercise", "4x10")))
-
-        exerciseList.add((Exercise("3", "Incline Barbell Bench Press", "4x12")))
-        exerciseList.add((Exercise("3", "Flat Bench Dumbbell Fly", "4x12")))
-        exerciseList.add((Exercise("3", "Seated Cable Row", "4x12")))
-        exerciseList.add((Exercise("3", "One Arm Dumbbell Row", "4x12")))
-        exerciseList.add((Exercise("3", "Dumbbell Lateral Raise", "4x12")))
-        exerciseList.add((Exercise("3", "Seated Incline Dumbbell Curl", "4x12")))
-        exerciseList.add((Exercise("3", "Cable Tricep Extension", "4x12")))
-
-        exerciseList.add((Exercise("4", "Front Squat", "4x12")))
-        exerciseList.add((Exercise("4", "Barbell Lunge", "4x12")))
-        exerciseList.add((Exercise("4", "Leg Extension", "4x15")))
-        exerciseList.add((Exercise("4", "Leg Curl", "4x15")))
-        exerciseList.add((Exercise("4", "Seated Calf Raise", "4x12")))
-        exerciseList.add((Exercise("4", "Calf Press", "4x12")))
-
-        return exerciseList
-    }
 }
 
-class Exercise (val dayNum:String, val name:String, val setRep:String)
