@@ -14,14 +14,12 @@
             android:layout_margin="5dp" android:id="@+id/constraintLayout">
 
         <TextView
-                android:text="Barbell Bench Press"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/workout1"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="name"/>
         <TextView
-                android:text="TextView"
                 android:tag="weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,14 +71,12 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <TextView
-                android:text="Incline Dumbbell Bench Press"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/workout2"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="name"/>
         <TextView
-                android:text="TextView"
                 android:tag="weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -132,14 +128,12 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <TextView
-                android:text="Bent Over Row"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/workout3"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="name"/>
         <TextView
-                android:text="TextView"
                 android:tag="weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -191,14 +185,12 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <TextView
-                android:text="Lat Pull Down"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/workout4"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="name"/>
         <TextView
-                android:text="TextView"
                 android:tag="weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -250,14 +242,12 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <TextView
-                android:text="Overhead Press"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/workout5"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="name"/>
         <TextView
-                android:text="TextView"
                 android:tag="weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -309,14 +299,12 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
 
         <TextView
-                android:text="Barbell Curl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/workout6"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="name"/>
         <TextView
-                android:text="TextView"
                 android:tag="weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -368,14 +356,12 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
         <TextView
-                android:text="Skullcrushers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/workout7"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="name"/>
         <TextView
-                android:text="TextView"
                 android:tag="weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

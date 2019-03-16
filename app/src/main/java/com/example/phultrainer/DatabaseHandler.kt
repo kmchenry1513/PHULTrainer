@@ -2,6 +2,7 @@ package com.example.phultrainer
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
@@ -33,6 +34,13 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
         val _success = db.insert(TABLE_NAME, null, values)
         db.close()
         return (Integer.parseInt("$_success") != -1)
+    }
+
+    fun getSize() : Long{
+        val db = readableDatabase
+        val count = DatabaseUtils.queryNumEntries(db, "Exercises")
+        db.close()
+        return count
     }
 
     fun getExercise(_id: Int): Exercise {
@@ -67,7 +75,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
             val cursor = db.rawQuery(selectQuery, null)
             if (cursor != null) {
                 cursor.moveToFirst()
-                while (cursor.moveToNext()) {
+                while (!(cursor.isAfterLast)) {
                     val exercise = Exercise()
                     exercise.id = Integer.parseInt(cursor.getString(cursor.getColumnIndex(ID)))
                     exercise.dayNum = cursor.getInt(cursor.getColumnIndex(DAYNUM))
@@ -75,6 +83,8 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
                     exercise.setRep = cursor.getString(cursor.getColumnIndex(SETREP))
                     exercise.weight = cursor.getDouble(cursor.getColumnIndex(WEIGHT))
                     exerciseList.add(exercise)
+
+                    cursor.moveToNext()
                 }
             }
             cursor.close()
@@ -88,7 +98,6 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
         values.put(NAME, exercise.name)
         values.put(SETREP, exercise.setRep)
         values.put(WEIGHT, exercise.weight)
-        Log.d("asdfcsdf", exercise.weight.toString())
         val _success = db.update(TABLE_NAME, values, ID + "=?", arrayOf(exercise.id.toString())).toLong()
         db.close()
         return Integer.parseInt("$_success") != -1

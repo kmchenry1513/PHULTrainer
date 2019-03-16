@@ -1,8 +1,6 @@
 package com.example.phultrainer
 
-import android.app.Activity
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.preference.PreferenceManager
@@ -16,40 +14,40 @@ import android.widget.TextView
 
 
 class WorkoutActivity : AppCompatActivity() {
-
+    var dbHandler: DatabaseHandler? = null
     private var timer: CountDownTimer? = null
     var exerciseList:ArrayList<Exercise> = ArrayList()
-    var dayExerciseList:ArrayList<String> = ArrayList()
+    var dayExerciseList:ArrayList<Exercise> = ArrayList()
     var day:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
-        val editor = sharedPref.edit()
-
-        editor.clear()
-        editor.commit()
+        dbHandler = DatabaseHandler(this)
 
         day = intent.getIntExtra("dayNumber", 0)
 
         when(day){
+            //These are all currently set to one because tags need to be added for the textviews on the other layouts
             1 -> setContentView(R.layout.day1_activity)
-            2 -> setContentView(R.layout.day2_activity)
-            3 -> setContentView(R.layout.day3_activity)
-            4 -> setContentView(R.layout.day4_activity)
+            2 -> setContentView(R.layout.day1_activity)
+            3 -> setContentView(R.layout.day1_activity)
+            4 -> setContentView(R.layout.day1_activity)
         }
 
-        setExerciseList()
+        initDayList()
         addWeights()
+
     }
 
-    private fun setExerciseList(){
+    private fun initDayList() {
         dayExerciseList.clear()
 
-        exerciseList.forEach{ exercise ->
-            if (exercise.dayNum.toInt() == day){
-                dayExerciseList.add(exercise.name)
+        exerciseList = dbHandler?.exercises as ArrayList<Exercise>
+
+        exerciseList.forEach{
+            if(it.dayNum == day){
+                dayExerciseList.add(it)
             }
         }
 
@@ -91,6 +89,7 @@ class WorkoutActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        initDayList()
         addWeights()
     }
 
@@ -101,13 +100,15 @@ class WorkoutActivity : AppCompatActivity() {
     }
 
     private fun displayWeights(view: ViewGroup) {
-        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
 
         for (i in 0 until view.childCount - 1) {
             val v = view.getChildAt(i)
  if (v is ViewGroup) {
-                val editText = v.findViewWithTag<TextView>("weight")
-                editText.text = sharedPref.getString("weight$i", "0") + " Lbs."
+     //TODO give tags for day view 2,3,4
+                val editText = v.findViewWithTag<TextView>("name")
+                val editText2 = v.findViewWithTag<TextView>("weight")
+                editText.text = dayExerciseList[i].name + "\t(" + dayExerciseList[i].setRep + ")"
+                editText2.text = dayExerciseList[i].weight.toString()
                 this.displayWeights(v)
             }
         }

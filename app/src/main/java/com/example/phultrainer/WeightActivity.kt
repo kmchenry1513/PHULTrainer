@@ -16,23 +16,20 @@ import android.widget.TextView
 
 class WeightActivity : AppCompatActivity(){
 
-    var dayExerciseList:ArrayList<String> = ArrayList()
-    var linearLayout:LinearLayout? = null
-
-    private var editor: SharedPreferences.Editor? = null
+    private var dayExerciseList:ArrayList<Exercise> = ArrayList()
+    private var linearLayout:LinearLayout? = null
+    var dbHandler: DatabaseHandler? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
-        editor = sharedPref.edit()
+        dbHandler = DatabaseHandler(this)
 
         setContentView(R.layout.weight_activity)
 
          linearLayout = findViewById<LinearLayout>(R.id.linlyt)
 
 
-        dayExerciseList = intent.getStringArrayListExtra("exercises")
+        dayExerciseList = intent.getParcelableArrayListExtra("exercises")
 
 
 
@@ -40,7 +37,7 @@ class WeightActivity : AppCompatActivity(){
             val textView = TextView(this)
             textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             textView.setPadding(20, 20, 20, 20)
-            textView.text = dayExerciseList[i]
+            textView.text = dayExerciseList[i].name
             linearLayout?.addView(textView)
 
             val editText = EditText(this)
@@ -49,9 +46,6 @@ class WeightActivity : AppCompatActivity(){
             editText.contentDescription = "Exercise Weight"
             editText.tag = "wgtET$i"
 
-            if(!(sharedPref.all.isEmpty())) {
-                editText.setText(sharedPref.getString("weight$i", "DEFAULT"))
-            }
 
             editText.setPadding(20, 20, 20, 20)
             linearLayout?.addView(editText)
@@ -69,8 +63,9 @@ class WeightActivity : AppCompatActivity(){
         for(i in 0 until dayExerciseList.size) {
             val editText = linearLayout!!.findViewWithTag<EditText>("wgtET$i")
             val txt = editText.text.toString()
-            editor!!.putString("weight$i", txt)
-            editor!!.commit()
+
+            dayExerciseList[i].weight = txt.toDouble()
+            dbHandler?.updateExercise(dayExerciseList[i])
         }
     }
 
