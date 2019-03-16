@@ -62,8 +62,11 @@ class WeightActivity : AppCompatActivity(){
 
         for(i in 0 until dayExerciseList.size) {
             val editText = linearLayout!!.findViewWithTag<EditText>("wgtET$i")
-            val txt = editText.text.toString()
+            var txt = editText.text.toString()
 
+            if(txt == ""){
+                txt = "0.0"
+            }
             dayExerciseList[i].weight = txt.toDouble()
             dbHandler?.updateExercise(dayExerciseList[i])
         }
