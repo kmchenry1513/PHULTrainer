@@ -5,21 +5,28 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
+import android.text.InputType
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.day1_activity.*
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import java.lang.Exception
 
 
 class WorkoutActivity : AppCompatActivity() {
+
     var dbHandler: DatabaseHandler? = null
     private var timer: CountDownTimer? = null
     var exerciseList:ArrayList<Exercise> = ArrayList()
     var dayExerciseList:ArrayList<Exercise> = ArrayList()
     var day:Int = 0
+    private var linearLayout:LinearLayout? = null
+    private var innerHeaderLayout:LinearLayout? = null
+    private var innerDataLayout:LinearLayout? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,17 +36,19 @@ class WorkoutActivity : AppCompatActivity() {
         day = intent.getIntExtra("dayNumber", 0)
 
         when(day){
-            //These are all currently set to one because tags need to be added for the textviews on the other layouts
             1 -> setContentView(R.layout.day1_activity)
-            2 -> setContentView(R.layout.day1_activity)
-            3 -> setContentView(R.layout.day1_activity)
-            4 -> setContentView(R.layout.day1_activity)
+            2 -> setContentView(R.layout.day2_activity)
+            3 -> setContentView(R.layout.day3_activity)
+            4 -> setContentView(R.layout.day4_activity)
         }
 
         initDayList()
         addWeights()
 
     }
+
+
+
 
     private fun initDayList() {
         dayExerciseList.clear()
@@ -88,9 +97,9 @@ class WorkoutActivity : AppCompatActivity() {
         var set = ""
         val root = findViewById<ViewGroup>(R.id.mainlayout)
         for (i in 0 until root.childCount - 1) {
+            set = ""
             val v = root.getChildAt(i)
             if (v is ViewGroup) {
-                //TODO give tags for day view 2,3,4
                 for( j in 0 until v.childCount - 2) {
                     val btn = v.findViewWithTag<Button>("set")
                     try{
@@ -129,7 +138,6 @@ class WorkoutActivity : AppCompatActivity() {
         for (i in 0 until view.childCount - 1) {
             val v = view.getChildAt(i)
  if (v is ViewGroup) {
-     //TODO give tags for day view 2,3,4
                 val editText = v.findViewWithTag<TextView>("name")
                 val editText2 = v.findViewWithTag<TextView>("weight")
                 editText.text = dayExerciseList[i].name + "\t(" + dayExerciseList[i].setRep + ")"
