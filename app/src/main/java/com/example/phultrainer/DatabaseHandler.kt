@@ -14,15 +14,25 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
                 ID + " INTEGER PRIMARY KEY," + DAYNUM + " INTEGER," +
                 NAME + " TEXT," + SETREP + " TEXT," +
                 WEIGHT + " FLOAT);"
+
+        val CREATE_TABLE2 = "CREATE TABLE $TABLE_NAME2 (" +
+                ID + " INTEGER PRIMARY KEY," + DAYNUM + " INTEGER," +
+                NAME + " TEXT," + SETREP + " TEXT," +
+                WEIGHT + " FLOAT);"
+
         db.execSQL(CREATE_TABLE)
+        db.execSQL(CREATE_TABLE2)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         val DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME
+        val DROP_TABLE2 = "DROP TABLE IF EXISTS " + TABLE_NAME2
         db.execSQL(DROP_TABLE)
+        db.execSQL(DROP_TABLE2)
         onCreate(db)
     }
 
+    //TODO make another add fun for previous workouts and have finish workout in workoutacivity call it
     fun addExercise(exercise: Exercise): Boolean {
         val db = this.writableDatabase
         val values = ContentValues()
@@ -120,5 +130,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
         private val NAME = "Name"
         private val SETREP = "SetRep"
         private val WEIGHT = "Weight"
+
+        private val TABLE_NAME2 = "Previous"
     }
 }  
