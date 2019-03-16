@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun viewPrevious(view: View){
-//        val previousActivity = Intent(this, PreviousActivity::class.java)
-//        startActivity(previousActivity)
+        val previousActivity = Intent(this, PreviousActivity::class.java)
+        startActivity(previousActivity)
 
     }
 
@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         dbHandler = DatabaseHandler(this)
 
-        val dbSize = dbHandler?.getSize()
-        var exercise: Exercise = Exercise()
+        val dbSize = dbHandler?.getSize("Exercises")
+        val exercise = Exercise()
 
         if (dbSize != null) {
             if(dbSize < 1){

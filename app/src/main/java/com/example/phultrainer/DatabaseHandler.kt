@@ -32,7 +32,6 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
         onCreate(db)
     }
 
-    //TODO make another add fun for previous workouts and have finish workout in workoutacivity call it
     fun addExercise(exercise: Exercise): Boolean {
         val db = this.writableDatabase
         val values = ContentValues()
@@ -46,9 +45,22 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
         return (Integer.parseInt("$_success") != -1)
     }
 
-    fun getSize() : Long{
+    fun addWorkout(exercise: Exercise): Boolean {
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put(DAYNUM, exercise.dayNum)
+        values.put(NAME, exercise.name)
+        values.put(SETREP, exercise.setRep)
+        values.put(WEIGHT, exercise.weight)
+
+        val _success = db.insert(TABLE_NAME2, null, values)
+        db.close()
+        return (Integer.parseInt("$_success") != -1)
+    }
+
+    fun getSize(tableName : String) : Long{
         val db = readableDatabase
-        val count = DatabaseUtils.queryNumEntries(db, "Exercises")
+        val count = DatabaseUtils.queryNumEntries(db, tableName)
         db.close()
         return count
     }
@@ -82,6 +94,30 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
             val exerciseList = ArrayList<Exercise>()
             val db = writableDatabase
             val selectQuery = "SELECT  * FROM $TABLE_NAME"
+            val cursor = db.rawQuery(selectQuery, null)
+            if (cursor != null) {
+                cursor.moveToFirst()
+                while (!(cursor.isAfterLast)) {
+                    val exercise = Exercise()
+                    exercise.id = Integer.parseInt(cursor.getString(cursor.getColumnIndex(ID)))
+                    exercise.dayNum = cursor.getInt(cursor.getColumnIndex(DAYNUM))
+                    exercise.name = cursor.getString(cursor.getColumnIndex(NAME))
+                    exercise.setRep = cursor.getString(cursor.getColumnIndex(SETREP))
+                    exercise.weight = cursor.getDouble(cursor.getColumnIndex(WEIGHT))
+                    exerciseList.add(exercise)
+
+                    cursor.moveToNext()
+                }
+            }
+            cursor.close()
+            return exerciseList
+        }
+
+    val previous: List<Exercise>
+        get() {
+            val exerciseList = ArrayList<Exercise>()
+            val db = writableDatabase
+            val selectQuery = "SELECT  * FROM $TABLE_NAME2"
             val cursor = db.rawQuery(selectQuery, null)
             if (cursor != null) {
                 cursor.moveToFirst()

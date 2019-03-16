@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/workout1set1"
                 app:layout_constraintTop_toBottomOf="@+id/workout1" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="set"/>
         <Button
                 android:text="0"
                 android:onClick="addRep"
@@ -41,7 +41,7 @@
                 android:id="@+id/workout1set2"
                 app:layout_constraintTop_toBottomOf="@+id/workout1"
                 app:layout_constraintStart_toEndOf="@+id/workout1set1"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="set"/>
         <Button
                 android:text="0"
                 android:onClick="addRep"
@@ -50,7 +50,7 @@
                 android:id="@+id/workout1set3"
                 app:layout_constraintTop_toBottomOf="@+id/workout1"
                 app:layout_constraintStart_toEndOf="@+id/workout1set2"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="set"/>
         <Button
                 android:text="0"
                 android:onClick="addRep"
@@ -59,7 +59,7 @@
                 android:id="@+id/workout1set4"
                 app:layout_constraintTop_toBottomOf="@+id/workout1"
                 app:layout_constraintStart_toEndOf="@+id/workout1set3"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" android:tag="set"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout

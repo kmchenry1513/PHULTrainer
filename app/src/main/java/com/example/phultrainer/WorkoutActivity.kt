@@ -11,6 +11,7 @@ import android.widget.Button
 import kotlinx.android.synthetic.main.day1_activity.*
 import android.view.ViewGroup
 import android.widget.TextView
+import java.lang.Exception
 
 
 class WorkoutActivity : AppCompatActivity() {
@@ -84,7 +85,31 @@ class WorkoutActivity : AppCompatActivity() {
     }
 
     fun finishWorkout(view: View){
-        //TODO add workout to DB
+        var set = ""
+        val root = findViewById<ViewGroup>(R.id.mainlayout)
+        for (i in 0 until root.childCount - 1) {
+            val v = root.getChildAt(i)
+            if (v is ViewGroup) {
+                //TODO give tags for day view 2,3,4
+                for( j in 0 until v.childCount - 2) {
+                    val btn = v.findViewWithTag<Button>("set")
+                    try{
+                    set = set + btn.text + "x"
+                }catch (e: Exception){
+                        set = "0x0x0x0x"
+                        break
+                    }
+                }
+                set = set.substring(0, set.length - 1)
+                dayExerciseList[i].setRep = set
+                this.displayWeights(v)
+            }
+
+        }
+
+        for(i in 0 until dayExerciseList.size){
+            dbHandler?.addWorkout(dayExerciseList[i])
+        }
         finish()
     }
 
