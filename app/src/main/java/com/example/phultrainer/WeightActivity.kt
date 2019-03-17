@@ -44,6 +44,7 @@ class WeightActivity : AppCompatActivity(){
             editText.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             editText.inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
             editText.contentDescription = "Exercise Weight"
+            editText.setText(dayExerciseList[i].weight.toString())
             editText.tag = "wgtET$i"
 
 
