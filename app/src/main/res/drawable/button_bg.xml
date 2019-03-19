@@ -19,6 +19,6 @@
     />
     <stroke
             android:width="3dp"
-            android:color="#878787"
+            android:color="#FF6D00"
     />
 </shape>

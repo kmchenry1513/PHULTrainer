@@ -8,49 +8,54 @@
         tools:context=".MainActivity">
     <Button
             android:text="Day 1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/day1Workout"
             android:onClick="startWorkout"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/button_bg"/>
+            android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/button_bg" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/day2Workout"/>
     <Button
             android:text="Day 2"
             android:onClick="startWorkout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/day2Workout" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/day1Workout" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:background="@drawable/button_bg"/>
+            android:id="@+id/day2Workout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp" android:background="@drawable/button_bg"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/day3Workout"/>
     <Button
             android:text="Day 3"
             android:onClick="startWorkout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/day3Workout" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/day2Workout" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:background="@drawable/button_bg"/>
+            android:id="@+id/day3Workout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp" android:background="@drawable/button_bg"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/day4Workout"/>
     <Button
             android:text="Day 4"
             android:onClick="startWorkout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/day4Workout" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/day3Workout" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:background="@drawable/button_bg"/>
+            android:id="@+id/day4Workout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp" android:background="@drawable/button_bg"
+            android:layout_marginBottom="32dp" app:layout_constraintBottom_toTopOf="@+id/previousWorkout"/>
     <Button
             android:text="Previous"
             android:onClick="viewPrevious"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/previousWorkout" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/day4Workout" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/button_bg" android:textSize="14sp"/>
+            android:id="@+id/previousWorkout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/button_bg" android:textSize="14sp" android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </android.support.constraint.ConstraintLayout>
