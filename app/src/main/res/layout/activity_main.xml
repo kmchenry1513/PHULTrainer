@@ -15,8 +15,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="32dp"
-            android:background="@drawable/button_bg" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/day2Workout"/>
+            android:background="@drawable/button_bg"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            android:textSize="18sp"/>
     <Button
             android:text="Day 2"
             android:onClick="startWorkout"
@@ -26,7 +27,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="32dp" android:background="@drawable/button_bg"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/day3Workout"/>
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/day1Workout"
+            android:textSize="18sp"/>
     <Button
             android:text="Day 3"
             android:onClick="startWorkout"
@@ -36,7 +38,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="32dp" android:background="@drawable/button_bg"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/day4Workout"/>
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/day2Workout"
+            android:textSize="18sp"/>
     <Button
             android:text="Day 4"
             android:onClick="startWorkout"
@@ -46,7 +49,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="32dp" android:background="@drawable/button_bg"
-            android:layout_marginBottom="32dp" app:layout_constraintBottom_toTopOf="@+id/previousWorkout"/>
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/day3Workout"
+            android:textSize="18sp"/>
     <Button
             android:text="Previous"
             android:onClick="viewPrevious"
@@ -56,6 +60,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="32dp"
-            android:background="@drawable/button_bg" android:textSize="14sp" android:layout_marginBottom="32dp"
+            android:background="@drawable/button_bg" android:textSize="18sp" android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toBottomOf="parent"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/freeweights"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView4"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"/>
 </android.support.constraint.ConstraintLayout>
