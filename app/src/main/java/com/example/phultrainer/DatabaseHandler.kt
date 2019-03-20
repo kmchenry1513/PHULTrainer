@@ -6,8 +6,13 @@ import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHandler.DB_NAME, null, DatabaseHandler.DB_VERSION) {
+
+    var currentDateTimeString = DateFormat.getDateTimeInstance().format(Date())
 
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_TABLE = "CREATE TABLE $TABLE_NAME (" +
@@ -16,7 +21,8 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
                 WEIGHT + " FLOAT);"
 
         val CREATE_TABLE2 = "CREATE TABLE $TABLE_NAME2 (" +
-                ID + " INTEGER PRIMARY KEY," + DAYNUM + " INTEGER," +
+                ID + " INTEGER PRIMARY KEY," + DATE + " TEXT," +
+                DAYNUM + " INTEGER," +
                 NAME + " TEXT," + SETREP + " TEXT," +
                 WEIGHT + " FLOAT);"
 
@@ -48,6 +54,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
     fun addWorkout(exercise: Exercise): Boolean {
         val db = this.writableDatabase
         val values = ContentValues()
+        values.put(DATE, currentDateTimeString)
         values.put(DAYNUM, exercise.dayNum)
         values.put(NAME, exercise.name)
         values.put(SETREP, exercise.setRep)
@@ -137,6 +144,25 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
             return exerciseList
         }
 
+    val date: List<String>
+        get() {
+            val dateList = ArrayList<String>()
+            val db = writableDatabase
+            val selectQuery = "SELECT  * FROM $TABLE_NAME2"
+            val cursor = db.rawQuery(selectQuery, null)
+            if (cursor != null) {
+                cursor.moveToFirst()
+                while (!(cursor.isAfterLast)) {
+                    val date = cursor.getString(cursor.getColumnIndex(DATE))
+                    dateList.add(date)
+
+                    cursor.moveToNext()
+                }
+            }
+            cursor.close()
+            return dateList
+        }
+
     fun updateExercise(exercise: Exercise): Boolean {
         val db = this.writableDatabase
         val values = ContentValues()
@@ -167,6 +193,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHand
         private val SETREP = "SetRep"
         private val WEIGHT = "Weight"
 
+        private val DATE = "Date"
         private val TABLE_NAME2 = "Previous"
     }
 }  
