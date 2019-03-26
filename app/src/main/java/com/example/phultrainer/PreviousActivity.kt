@@ -42,7 +42,7 @@ class PreviousActivity : AppCompatActivity() {
         exerciseList = dbHandler?.previous as ArrayList<Exercise>
         dateList = dbHandler?.date as ArrayList<String>
 
-        for (i in 0 until exerciseList.size - 1){
+        for (i in 0 until exerciseList.size){
             var str = exerciseList[i].name + "\nSets/Reps: "  + exerciseList[i].setRep + "\nWeight: " + exerciseList[i].weight.toString() + " Lbs.\n\n"
 
             when(i){
