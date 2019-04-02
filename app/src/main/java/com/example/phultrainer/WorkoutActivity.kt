@@ -100,13 +100,16 @@ class WorkoutActivity : AppCompatActivity() {
             set = ""
             val v = root.getChildAt(i)
             if (v is ViewGroup) {
-                for( j in 0 until v.childCount - 2) {
-                    val btn = v.findViewWithTag<Button>("set")
-                    try{
-                    set = set + btn.text + "x"
-                }catch (e: Exception){
-                        set = "0x0x0x0x"
-                        break
+                for( j in 0 until v.childCount) {
+                    val child = v.getChildAt(j)
+                    if(child is Button) {
+                        val btn = child.findViewWithTag<Button>("set")
+                        try {
+                            set = set + btn.text + "x"
+                        } catch (e: Exception) {
+                            set = "0x0x0x0x"
+                            break
+                        }
                     }
                 }
                 set = set.substring(0, set.length - 1)
