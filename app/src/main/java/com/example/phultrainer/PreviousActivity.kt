@@ -61,6 +61,7 @@ class PreviousActivity : AppCompatActivity() {
         }
 
     private fun displayList(){
+        list.sort()
         var listView = lv
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
         listView.adapter = adapter
