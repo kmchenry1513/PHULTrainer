@@ -1,6 +1,7 @@
 # PHULTrainer
-Workout App following the Power Hypertrophy Upper Lower (P.H.U.L.) Workout
+Workout App following the Power Hypertrophy Upper Lower (P.H.U.L.) Workout.
 ## Motivation
+This project was started as a way to learn Kotlin while having a simple way to track my progress for my workout routine. It was used to gain experience using SQLite databases as well.
 ## Features
 ## Installation
 PHULTrainer will soon be on the Google Play Store for download.<br/>
