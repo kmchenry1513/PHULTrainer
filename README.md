@@ -3,6 +3,8 @@ Workout App following the Power Hypertrophy Upper Lower (P.H.U.L.) Workout
 ## Motivation
 ## Features
 ## Installation
+PHULTrainer will soon be on the Google Play Store for download.<br/>
+To build this app from the source code see this [tutorial](https://www.londonappdeveloper.com/how-to-clone-a-github-project-on-android-studio/) for details.
 ## Authors
 [Kyle McHenry](https://github.com/kmchenry1513)
 ## License
