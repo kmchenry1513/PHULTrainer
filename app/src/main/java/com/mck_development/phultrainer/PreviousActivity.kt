@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.previous_activity.*
 import java.util.*
+import kotlin.collections.LinkedHashMap
 
 
 class PreviousActivity : AppCompatActivity() {
@@ -17,7 +18,7 @@ class PreviousActivity : AppCompatActivity() {
     var dateList:ArrayList<String> = ArrayList()
     var list:ArrayList<String> = ArrayList()
 
-    var map : HashMap<String,String> = HashMap()
+    var map : LinkedHashMap<String,String> = LinkedHashMap()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
