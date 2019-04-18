@@ -1,4 +1,4 @@
-package com.example.phultrainer
+package com.mck_development.phultrainer
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

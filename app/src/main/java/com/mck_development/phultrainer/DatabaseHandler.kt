@@ -1,13 +1,11 @@
-package com.example.phultrainer
+package com.mck_development.phultrainer
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
 import java.text.DateFormat
-import java.text.SimpleDateFormat
 import java.util.*
 
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DatabaseHandler.DB_NAME, null, DatabaseHandler.DB_VERSION) {

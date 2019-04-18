@@ -1,17 +1,13 @@
-package com.example.phultrainer
+package com.mck_development.phultrainer
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
-import android.text.InputType
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.day1_activity.*
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import java.lang.Exception

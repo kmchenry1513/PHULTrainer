@@ -1,17 +1,13 @@
-package com.example.phultrainer
+package com.mck_development.phultrainer
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.ListView
 import kotlinx.android.synthetic.main.previous_activity.*
-import android.widget.Toast
-
+import java.util.*
 
 
 class PreviousActivity : AppCompatActivity() {
@@ -46,12 +42,12 @@ class PreviousActivity : AppCompatActivity() {
             var str = exerciseList[i].name + "\nSets/Reps: "  + exerciseList[i].setRep + "\nWeight: " + exerciseList[i].weight.toString() + " Lbs.\n\n"
 
             when(i){
-                0 -> map[dateList[i]] = str
+                0 -> map[dateList[i] + " (" + exerciseList[i].dayNum + ")"] = str
                 else ->{
-                    if(map.containsKey(dateList[i])){
-                        map[dateList[i]] = map[dateList[i]] + str
+                    if(map.containsKey(dateList[i] + " (" + exerciseList[i].dayNum + ")")){
+                        map[dateList[i] + " (" + exerciseList[i].dayNum + ")"] = map[dateList[i] + " (" + exerciseList[i].dayNum + ")"] + str
                     }else {
-                        map[dateList[i]] = str
+                        map[dateList[i] + " (" + exerciseList[i].dayNum + ")"] = str
                     }
                 }
             }

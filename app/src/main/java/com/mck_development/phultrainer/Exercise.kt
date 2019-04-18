@@ -1,4 +1,4 @@
-package com.example.phultrainer
+package com.mck_development.phultrainer
 
 import android.os.Parcel
 import android.os.Parcelable

@@ -1,4 +1,4 @@
-package com.example.phultrainer
+package com.mck_development.phultrainer
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
