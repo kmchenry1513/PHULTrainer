@@ -8,32 +8,37 @@
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="5dp" android:id="@+id/constraintLayout"
-            android:background="@android:color/background_light" android:paddingBottom="1dp">
+            android:layout_margin="1dp"
+            android:id="@+id/constraintLayout"
+            android:background="@android:color/background_light"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout1"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:tag="name"/>
+                android:tag="name"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="64dp"
+                app:layout_constraintEnd_toStartOf="@+id/weight1" android:layout_marginStart="8dp"/>
         <TextView
                 android:tag="weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/weight1" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/weight1" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="64dp"
+                app:layout_constraintStart_toEndOf="@+id/workout1" android:textAlignment="textEnd"
+                android:layout_marginEnd="8dp"/>
         <Button
                 android:text="0"
                 android:onClick="addRep"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout1set1"
                 app:layout_constraintTop_toBottomOf="@+id/workout1" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" android:tag="set"
@@ -42,565 +47,543 @@
         <Button
                 android:text="0"
                 android:onClick="addRep"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout1set2"
                 app:layout_constraintTop_toBottomOf="@+id/workout1"
                 app:layout_constraintStart_toEndOf="@+id/workout1set1"
-                android:layout_marginStart="8dp" android:tag="set"
-                app:layout_constraintEnd_toStartOf="@+id/workout1set3"/>
+                android:tag="set"
+                app:layout_constraintEnd_toStartOf="@+id/workout1set3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
                 android:onClick="addRep"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout1set3"
                 app:layout_constraintTop_toBottomOf="@+id/workout1"
                 app:layout_constraintStart_toEndOf="@+id/workout1set2"
-                android:layout_marginStart="8dp" android:tag="set"
-                app:layout_constraintEnd_toStartOf="@+id/workout1set4"/>
+                android:tag="set"
+                app:layout_constraintEnd_toStartOf="@+id/workout1set4"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
                 android:onClick="addRep"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout1set4"
                 app:layout_constraintTop_toBottomOf="@+id/workout1"
                 app:layout_constraintStart_toEndOf="@+id/workout1set3"
-                android:layout_marginStart="8dp" android:tag="set" app:layout_constraintEnd_toEndOf="parent"
-        />
+                android:tag="set" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:background="@android:color/background_light"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="5dp" android:id="@+id/constraintLayout2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" android:paddingBottom="1dp">
+            android:layout_margin="1dp" android:id="@+id/constraintLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout3">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout2"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:tag="name"/>
+                android:tag="name"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/weight2"
+        />
         <TextView
                 android:tag="weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/weight2" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="64dp" app:layout_constraintStart_toEndOf="@+id/workout2"
+                android:textAlignment="textEnd"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout2set1"
                 app:layout_constraintTop_toBottomOf="@+id/workout2" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout2set2"
-        />
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout2set2"
                 app:layout_constraintTop_toBottomOf="@+id/workout2"
                 app:layout_constraintStart_toEndOf="@+id/workout2set1"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout2set3"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout2set3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout2set3"
                 app:layout_constraintTop_toBottomOf="@+id/workout2"
                 app:layout_constraintStart_toEndOf="@+id/workout2set2"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout2set4"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout2set4"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout2set4"
                 app:layout_constraintTop_toBottomOf="@+id/workout2"
                 app:layout_constraintStart_toEndOf="@+id/workout2set3"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-        />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:background="@android:color/background_light"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="5dp" android:id="@+id/constraintLayout3"
+            android:layout_margin="1dp" android:id="@+id/constraintLayout3"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" android:paddingBottom="1dp">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout3"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:tag="name"/>
+                android:layout_marginStart="8dp" android:tag="name" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="64dp" app:layout_constraintEnd_toStartOf="@+id/weight3"/>
         <TextView
                 android:tag="weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/weight3" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="64dp" app:layout_constraintStart_toEndOf="@+id/workout3"
+                android:textAlignment="textEnd"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout3set1"
                 app:layout_constraintTop_toBottomOf="@+id/workout3" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout3set2"
-        />
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout3set2"
                 app:layout_constraintTop_toBottomOf="@+id/workout3"
                 app:layout_constraintStart_toEndOf="@+id/workout3set1"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout3set3"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout3set3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout3set3"
                 app:layout_constraintTop_toBottomOf="@+id/workout3"
                 app:layout_constraintStart_toEndOf="@+id/workout3set2"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout3set4"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout3set4"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout3set4"
                 app:layout_constraintTop_toBottomOf="@+id/workout3"
                 app:layout_constraintStart_toEndOf="@+id/workout3set3"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-        />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:background="@android:color/background_light"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="5dp" android:id="@+id/constraintLayout4"
+            android:layout_margin="1dp" android:id="@+id/constraintLayout4"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" android:paddingBottom="1dp">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout5">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout4"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:tag="name"/>
+                android:layout_marginStart="8dp" android:tag="name"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight4"/>
         <TextView
                 android:tag="weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/weight4" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/workout4"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="64dp"
+                android:textAlignment="textEnd"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout4set1"
                 app:layout_constraintTop_toBottomOf="@+id/workout4" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout4set2"
-        />
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout4set2"
                 app:layout_constraintTop_toBottomOf="@+id/workout4"
                 app:layout_constraintStart_toEndOf="@+id/workout4set1"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout4set3"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout4set3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout4set3"
                 app:layout_constraintTop_toBottomOf="@+id/workout4"
                 app:layout_constraintStart_toEndOf="@+id/workout4set2"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout4set4"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout4set4"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout4set4"
                 app:layout_constraintTop_toBottomOf="@+id/workout4"
                 app:layout_constraintStart_toEndOf="@+id/workout4set3"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-        />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"/>
     </android.support.constraint.ConstraintLayout>
-
     <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:background="@android:color/background_light"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="5dp" android:id="@+id/constraintLayout5"
+            android:layout_margin="1dp" android:id="@+id/constraintLayout5"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" android:paddingBottom="1dp">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout6">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout5"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:tag="name"/>
+                android:layout_marginStart="8dp" android:tag="name"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight5"/>
         <TextView
                 android:tag="weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/weight5" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/workout5"
+                android:textAlignment="textEnd"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout5set1"
                 app:layout_constraintTop_toBottomOf="@+id/workout5" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout5set2"
-        />
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout5set2"
                 app:layout_constraintTop_toBottomOf="@+id/workout5"
                 app:layout_constraintStart_toEndOf="@+id/workout5set1"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout5set3"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout5set3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout5set3"
                 app:layout_constraintTop_toBottomOf="@+id/workout5"
                 app:layout_constraintStart_toEndOf="@+id/workout5set2"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout5set4"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout5set4"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout5set4"
                 app:layout_constraintTop_toBottomOf="@+id/workout5"
                 app:layout_constraintStart_toEndOf="@+id/workout5set3"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-        />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:background="@android:color/background_light"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="5dp" android:id="@+id/constraintLayout6"
+            android:layout_margin="1dp" android:id="@+id/constraintLayout6"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" android:paddingBottom="1dp">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout7">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout6"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:tag="name"/>
+                android:layout_marginStart="8dp" android:tag="name"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight6"/>
         <TextView
                 android:tag="weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/weight6" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintStart_toEndOf="@+id/workout6" android:textAlignment="textEnd"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout6set1"
                 app:layout_constraintTop_toBottomOf="@+id/workout6" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout6set2"
-        />
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout6set2"
                 app:layout_constraintTop_toBottomOf="@+id/workout6"
                 app:layout_constraintStart_toEndOf="@+id/workout6set1"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout6set3"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout6set3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout6set3"
                 app:layout_constraintTop_toBottomOf="@+id/workout6"
                 app:layout_constraintStart_toEndOf="@+id/workout6set2"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout6set4"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout6set4"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout6set4"
                 app:layout_constraintTop_toBottomOf="@+id/workout6"
                 app:layout_constraintStart_toEndOf="@+id/workout6set3"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-        />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"/>
     </android.support.constraint.ConstraintLayout>
     <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:background="@android:color/background_light"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="5dp" android:id="@+id/constraintLayout7"
+            android:layout_margin="1dp" android:id="@+id/constraintLayout7"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6" android:paddingBottom="1dp">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout8">
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout7"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:tag="name"/>
+                android:layout_marginStart="8dp" android:tag="name"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight7"/>
         <TextView
                 android:tag="weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/weight7" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="64dp"
+                app:layout_constraintStart_toEndOf="@+id/workout7"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout7set1"
                 app:layout_constraintTop_toBottomOf="@+id/workout7" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout7set2"
-        />
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout7set2"
                 app:layout_constraintTop_toBottomOf="@+id/workout7"
                 app:layout_constraintStart_toEndOf="@+id/workout7set1"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout7set3"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout7set3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout7set3"
                 app:layout_constraintTop_toBottomOf="@+id/workout7"
                 app:layout_constraintStart_toEndOf="@+id/workout7set2"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/workout7set4"
-        />
+                app:layout_constraintEnd_toStartOf="@+id/workout7set4"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         <Button
                 android:text="0"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
                 android:background="@drawable/button_bg"
                 android:tag="set"
                 android:onClick="addRep"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/workout7set4"
-                app:layout_constraintTop_toBottomOf="@+id/workout7"
-                app:layout_constraintStart_toEndOf="@+id/workout7set3"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-        />
+                app:layout_constraintTop_toBottomOf="@+id/weight7" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/workout7set3"/>
     </android.support.constraint.ConstraintLayout>
+
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="parent"
             android:background="@android:color/background_light"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" android:id="@+id/constraintLayout8">
 
         <Button
                 android:text="Set Weights"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:id="@+id/setWgtBtn"
                 android:onClick="setWeight"
                 android:background="@drawable/button_bg"
-                android:textSize="18sp" android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/finishWktBtn"
                 app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toEndOf="@+id/timerTV" android:layout_marginStart="8dp"/>
+                app:layout_constraintStart_toEndOf="@+id/timerTV"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/finishWktBtn"/>
         <Button
                 android:text="Finish Workout"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:id="@+id/finishWktBtn"
-                android:layout_marginStart="8dp"
                 android:onClick="finishWorkout"
-                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textSize="18sp"
-                android:background="@drawable/button_bg"/>
+                android:background="@drawable/button_bg"
+                app:layout_constraintTop_toBottomOf="@+id/setWgtBtn" android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" android:layout_marginEnd="8dp" android:layout_marginStart="8dp"/>
         <TextView
                 android:text="30s"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:id="@+id/timerTV"
-                android:textSize="36sp"
-                android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toTopOf="@+id/finishWktBtn"
-                app:layout_constraintStart_toEndOf="@+id/startTimerBtn" android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/setWgtBtn"/>
+                app:layout_constraintEnd_toStartOf="@+id/setWgtBtn"
+                app:layout_constraintStart_toEndOf="@+id/startTimerBtn"
+                app:layout_constraintTop_toTopOf="parent" android:gravity="center" android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"/>
         <Button
                 android:text="Start Timer"
 
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:id="@+id/startTimerBtn"
                 android:onClick="startTimer"
                 android:background="@drawable/button_bg"
-                android:textSize="18sp" android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/finishWktBtn"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/timerTV" android:layout_marginEnd="8dp"/>
+                app:layout_constraintEnd_toStartOf="@+id/timerTV"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/finishWktBtn"/>
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
