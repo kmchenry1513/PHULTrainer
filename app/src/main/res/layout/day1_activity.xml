@@ -23,7 +23,8 @@
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:tag="name"
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="64dp"
-                app:layout_constraintEnd_toStartOf="@+id/weight1" android:layout_marginStart="8dp"/>
+                app:layout_constraintEnd_toStartOf="@+id/weight1" android:layout_marginStart="8dp"
+                android:textSize="10sp"/>
         <TextView
                 android:tag="weight"
                 android:layout_width="0dp"
@@ -99,7 +100,7 @@
                 android:layout_marginBottom="64dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/weight2"
-        />
+                android:textSize="10sp"/>
         <TextView
                 android:tag="weight"
                 android:layout_width="0dp"
@@ -174,7 +175,8 @@
                 android:id="@+id/workout3"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" android:tag="name" app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="64dp" app:layout_constraintEnd_toStartOf="@+id/weight3"/>
+                android:layout_marginBottom="64dp" app:layout_constraintEnd_toStartOf="@+id/weight3"
+                android:textSize="10sp"/>
         <TextView
                 android:tag="weight"
                 android:layout_width="0dp"
@@ -249,7 +251,8 @@
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" android:tag="name"
                 android:layout_marginBottom="64dp"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight4"/>
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight4"
+                android:textSize="10sp"/>
         <TextView
                 android:tag="weight"
                 android:layout_width="0dp"
@@ -323,7 +326,8 @@
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" android:tag="name"
                 android:layout_marginBottom="64dp"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight5"/>
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight5"
+                android:textSize="10sp"/>
         <TextView
                 android:tag="weight"
                 android:layout_width="0dp"
@@ -399,7 +403,8 @@
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" android:tag="name"
                 android:layout_marginBottom="64dp"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight6"/>
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight6"
+                android:textSize="10sp"/>
         <TextView
                 android:tag="weight"
                 android:layout_width="0dp"
@@ -473,7 +478,8 @@
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" android:tag="name"
                 android:layout_marginBottom="64dp"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight7"/>
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/weight7"
+                android:textSize="10sp"/>
         <TextView
                 android:tag="weight"
                 android:layout_width="0dp"
@@ -481,7 +487,7 @@
                 android:id="@+id/weight7" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="64dp"
-                app:layout_constraintStart_toEndOf="@+id/workout7"/>
+                app:layout_constraintStart_toEndOf="@+id/workout7" android:textAlignment="textEnd"/>
         <Button
                 android:text="0"
                 android:background="@drawable/button_bg"
