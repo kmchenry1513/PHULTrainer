@@ -139,7 +139,7 @@ class WorkoutActivity : AppCompatActivity() {
  if (v is ViewGroup) {
                 val editText = v.findViewWithTag<TextView>("name")
                 val editText2 = v.findViewWithTag<TextView>("weight")
-                editText.text = dayExerciseList[i].name + "\t(" + dayExerciseList[i].setRep + ")"
+                editText.text = dayExerciseList[i].name + " (" + dayExerciseList[i].setRep + ")"
                 editText2.text = dayExerciseList[i].weight.toString()
                 this.displayWeights(v)
             }
